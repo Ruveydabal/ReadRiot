@@ -12,20 +12,24 @@ const Nav = () => {
                 </div>
                 <div className="navLinkContainer">
                     <div className="navLink">
-                        <Link to={"Home.jsx"} >
+                        <Link to={"/"} >
                             Home
                         </Link>
                     </div>
                     <div className="navLink">
-                        <Link to={"/Favorite.jsx"} >
+                        <Link to={"/favorite"} >
                             Favorites
                         </Link>
                     </div>
                     <div className="navLink">
-                        <a>Friends</a>
+                        <Link to={"/friends"} >
+                            Friends
+                        </Link>
                     </div>
                     <div className="navLink">
-                        <a>Login</a>
+                        <Link to={"/login"} >
+                            Login
+                        </Link>
                     </div>
                 </div>
                 <div className="searchContainer">
