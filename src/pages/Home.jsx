@@ -1,12 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from "./Nav.jsx";
+import { getDocs, collection, doc } from "firebase/firestore";
+import { db } from "../Firebase.jsx";
 
 const Home = () => {
-  return (
-    <div>
-      <Nav />
-    </div>
-  )
+    const [getBooks, setGetBooks] = useState([]);
+    const books = collection(db, "Boeken");
+
+    useEffect(() => {
+        const getBookDetails = async () => {
+            const data = await getDocs(books)
+            setGetBooks(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})));
+        }
+        getBookDetails();
+        
+    }, [])
+    console.log(getBooks);
+
+    return (
+        <div>
+            <Nav />
+        </div>
+    )   
 }
 
 export default Home

@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/Nav.scss";
 import Logo from "../images/LogoReadRiot.png";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
     return(
@@ -11,10 +12,14 @@ const Nav = () => {
                 </div>
                 <div className="navLinkContainer">
                     <div className="navLink">
-                        <a>Home</a>
+                        <Link to={"Home.jsx"} >
+                            Home
+                        </Link>
                     </div>
                     <div className="navLink">
-                        <a>Favorites</a>
+                        <Link to={"/Favorite.jsx"} >
+                            Favorites
+                        </Link>
                     </div>
                     <div className="navLink">
                         <a>Friends</a>
