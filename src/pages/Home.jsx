@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Nav from "./Nav.jsx";
+import HomePostedMessages from "./HomePostedMessages.jsx";
+import Footer from "./Footer.jsx";
 import { getDocs, collection, doc } from "firebase/firestore";
 import { db } from "../Firebase.jsx";
 
@@ -20,6 +22,8 @@ const Home = () => {
     return (
         <div>
             <Nav />
+            <HomePostedMessages />
+            <Footer />
         </div>
     )   
 }
