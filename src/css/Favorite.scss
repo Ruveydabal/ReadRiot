@@ -1,0 +1,16 @@
+.background {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .backgroundbooks {
+        background-color: #333333;
+        height: 400px;
+        width: 300px;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
