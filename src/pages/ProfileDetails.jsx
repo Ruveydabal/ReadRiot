@@ -1,14 +1,27 @@
-import Nav from "./Nav.jsx";
-import Footer from "./Footer.jsx";
+import React from 'react';
+import "../css/Profile.scss";
 
 const ProfileDetails = () => {
-
     return (
-        <div>
-            <Nav />
-            <Footer />
+        <div className="background">
+            <div className="links">
+                <div className="foto">
+
+                </div>
+                <div className="btn">
+
+                </div>
+            </div>
+            <div className="rechts">
+                <div className="naam">
+
+                </div>
+                <div className="bio">
+                    
+                </div>
+            </div>
         </div>
-    )   
+    )
 }
 
 export default ProfileDetails;
