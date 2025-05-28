@@ -6,7 +6,7 @@ const ProfileDetails = () => {
         <div className="background">
             <div className="links">
                 <div className="foto">
-
+                    <img src="" />
                 </div>
                 <div className="btn">
 
