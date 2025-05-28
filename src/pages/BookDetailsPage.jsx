@@ -1,5 +1,5 @@
 import Nav from "./Nav.jsx";
-import BookCommunity from "./BookCommunity.jsx";
+import AllBooksSameAutheur from "./AllBooksSameAutheur.jsx";
 import Footer from "./Footer.jsx";
 import "../css/Books.scss";
 
@@ -9,7 +9,7 @@ const BookDetailsPage = () => {
         <div>
             <Nav />
 
-            <BookCommunity />
+            <AllBooksSameAutheur />
             <Footer />
         </div>
     )   

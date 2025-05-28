@@ -6,6 +6,7 @@ const Login = () => {
     return (
         <div>
             <Nav />
+            {/* hoe tf moet je hier een inlog maken.... */}
             <Footer />
         </div>
     )   

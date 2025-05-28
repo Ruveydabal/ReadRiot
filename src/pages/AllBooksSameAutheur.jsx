@@ -1,14 +1,15 @@
 import React from 'react';
 import "../css/Books.scss";
 
-const BookCommunity = () => {
+//dit moet onder boek details pagina
+const AllBooksSameAuthor = () => {
     return (
         <div className="background">
-            <div className="community">
+            <div className="booksauthor">
 
             </div>
         </div>
     )
 }
 
-export default BookCommunity;
+export default AllBooksSameAuthor;
