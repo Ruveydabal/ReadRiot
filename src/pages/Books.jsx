@@ -1,8 +1,8 @@
 import Nav from "./Nav.jsx";
-import FavoriteBooks from "./FavoriteBooks.jsx";
+import FavoriteBooks from "./AllBooks.jsx";
 import Footer from "./Footer.jsx";
 
-const Favorites = () => {
+const Books = () => {
 
     return (
         <div>
@@ -13,4 +13,4 @@ const Favorites = () => {
     )   
 }
 
-export default Favorites;
+export default Books;

@@ -1,16 +1,49 @@
-.background {
+.booksBackgroundWhite{
+    height: 100%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
     align-items: center;
-    .backgroundbooks {
-        background-color: #333333;
-        height: 400px;
-        width: 300px;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
+    justify-content: center;
+
+    .booksContainer{
+        height: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
+        background-color: #333333;
+
+        .booksFeed {
+            background-color: #D9D9D9;
+            width: 250px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .bookTextBlock{
+                height: 25px;
+                width: 100%;
+              background-color: red;
+
+                .bookText{
+                    color: black;
+                    font-weight: lighter;
+                    font-size: medium;
+                }
+
+                .bookTextBold{
+                    color: black;
+                    font-weight: bold;
+                    font-size: medium;
+                }
+            }
+
+
+          
+        }
     }
 }
