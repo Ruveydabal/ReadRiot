@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Footer.scss";
+import AddBoek from "./AddBoek.jsx";
 
 const Footer = () => {
     return (

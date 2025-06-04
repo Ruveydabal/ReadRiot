@@ -18,6 +18,11 @@ const Nav = () => {
                             </Link>
                         </div>
                         <div className="navLink">
+                            <Link to={"/addbook"} >
+                                AddBoek
+                            </Link>
+                        </div>
+                        <div className="navLink">
                             <Link to={"/favorite"} >
                                 Favorites
                             </Link>
