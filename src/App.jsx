@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import Favorite from "./pages/Favorite.jsx";
+import Books from "./pages/Books.jsx";
 import Friends from "./pages/Friends.jsx";
 import Login from "./pages/Login.jsx";
 import AddBoek from "./pages/AddBoek.jsx";
@@ -10,7 +10,7 @@ const App = () => {
         <Routes>
             <Route path={"/"} element={<Home />} />
             <Route path={"/addbook"} element={<AddBoek />} />
-            <Route path={"/favorite"} element={<Favorite />} />
+            <Route path={"/books"} element={<Books />} />
             <Route path={"/friends"} element={<Friends />} />
             <Route path={"/login"} element={<Login />} />
         </Routes>

@@ -23,8 +23,8 @@ const Nav = () => {
                             </Link>
                         </div> */}
                         <div className="navLink">
-                            <Link to={"/favorite"} >
-                                Favorites
+                            <Link to={"/books"} >
+                                Books
                             </Link>
                         </div>
                         <div className="navLink">
