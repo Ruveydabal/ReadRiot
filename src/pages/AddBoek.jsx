@@ -69,7 +69,6 @@ const AddBoek = () => {
                             <button className="cancelbtn" onClick={() => navigate("/")}> 
                                 Cancel
                             </button>
-
                             <button className="addbtn" onClick={createBook}> 
                                 Add Book
                             </button>
