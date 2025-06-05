@@ -22,19 +22,19 @@ const AllFriends = () => {
             <div className="userContainer">
                  {getUser && getUser.map((user, index) => (
                 <section className="userFeed">
-                        <div key={index}>     
-                            <div className="userTextBlock">
-                                <a className="userTextBold">{user.profileName}</a>
-                            </div>
+                    <div key={index}>     
                         <div className="userTextBlock">
-                                <a className="userTextBold">name: </a> 
-                                <a className="userText">{user.name}</a>
-                        </div> 
-                            <div className="userTextBlock">
-                                <a className="userTextBold">biography: </a> 
-                                <a className="userText">{user.biography}</a>
-                            </div>
+                            <a className="userTextBold">{user.profileName}</a>
                         </div>
+                        <div className="userTextBlock">
+                            <a className="userTextBold">name: </a> 
+                            <a className="userText">{user.name}</a>
+                        </div> 
+                        <div className="userTextBlock">
+                            <a className="userTextBold">biography: </a> 
+                            <a className="userText">{user.biography}</a>
+                        </div>
+                    </div>
                 </section>
             ))}
             </div>

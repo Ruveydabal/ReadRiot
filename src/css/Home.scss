@@ -6,27 +6,77 @@
     font-family: "Playfaire Display", serif;
 }
 
-.background {
+.homeBackgroundWhite{
+    height: 100%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
     align-items: center;
-    .backgroundMessage {
-        background-color: #333333;
-        height: 400px;
-        width: 300px;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    .homeContainer {
+        height: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
-        // .fullMessage {
-        //     .message {
+        justify-content: center;
+        background-color: #333333;
+        
+        .homeFeed{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 90%;
+            height: 180px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            
+            .messageBlock{
+                height: 100%;
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: pink;
 
-        //     }
-        //     .reactions {
+                .messageTextBlock{
+                height: 25px;
+                width: 250px;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                
 
-        //     }
-        // }
+                .messageText{
+                    color: black;
+                    font-weight: lighter;
+                    font-size: medium;
+                    margin-left: 4px;
+                }
+
+                .messageTextBold{
+                    color: black;
+                    font-weight: bold;
+                    font-size: medium;
+                    //margin-left: 5px;
+                }
+            }
+            }
+
+            .reactionBlock{
+                height: 100%;
+                width: 30%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: red;
+            }
+        }
+
     }
 }
