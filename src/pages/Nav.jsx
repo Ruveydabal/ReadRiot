@@ -17,11 +17,11 @@ const Nav = () => {
                                 Home
                             </Link>
                         </div>
-                        <div className="navLink">
+                        {/* <div className="navLink">
                             <Link to={"/addbook"} >
                                 AddBoek
                             </Link>
-                        </div>
+                        </div> */}
                         <div className="navLink">
                             <Link to={"/favorite"} >
                                 Favorites

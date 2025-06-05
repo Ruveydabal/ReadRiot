@@ -4,9 +4,11 @@ import Nav from "./Nav.jsx";
 import Footer from "./Footer.jsx";
 import "../css/Footer.scss";
 import { getDocs, collection, doc, getFirestore, updateDoc, addDoc } from "firebase/firestore";
+import { useNavigate } from 'react-router-dom';
 import { db } from "../Firebase.jsx";
 
 const AddBoek = () => {
+    const navigate = useNavigate();
 
     const book = collection(db, "Books"); 
 
@@ -61,17 +63,16 @@ const AddBoek = () => {
                                 onChange={(e) => setInfo({ ...getInfo, description: e.target.value })}
                             />
                         </div>
+                    </div>
+                    <div className="buttondetails">
+                        <div className="btns">
+                            <button className="cancelbtn" onClick={() => navigate("/")}> 
+                                Cancel
+                            </button>
 
-                        <div className="buttondetails">
-                            <div className="btns">
-                                <button> 
-                                    Cancel
-                                </button>
-
-                                <button className="addbtn" onClick={createBook}> 
-                                    Add Book
-                                </button>
-                            </div>
+                            <button className="addbtn" onClick={createBook}> 
+                                Add Book
+                            </button>
                         </div>
                     </div>
                 </div>
