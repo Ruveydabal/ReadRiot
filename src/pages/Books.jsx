@@ -1,5 +1,5 @@
 import Nav from "./Nav.jsx";
-import FavoriteBooks from "./AllBooks.jsx";
+import AllBooks from "./AllBooks.jsx";
 import Footer from "./Footer.jsx";
 
 const Books = () => {
@@ -7,7 +7,7 @@ const Books = () => {
     return (
         <div>
             <Nav />
-            <FavoriteBooks />
+            <AllBooks />
             <Footer />
         </div>
     )   
