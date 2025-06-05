@@ -6,35 +6,6 @@ import { getDocs, collection, doc, getFirestore, updateDoc } from "firebase/fire
 import { db } from "../Firebase.jsx";
 
 const Home = () => {
-    // const [getBooks, setGetBooks] = useState([]);
-    // const books = collection(db, "Books");
-
-    // const [getTitle, setTitle] = useState("");
-    // const [getAutheur, setAutheur] = useState("");
-    // const [getOmschrijving, setOmschrijving] = useState("");
-    // const [getDate, setDate] = useState("");
-
-    // useEffect(() => {
-    //     const getBookDetails = async () => {
-    //         const data = await getDocs(books)
-    //         setGetBooks(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})));
-    //     }
-    //     getBookDetails();
-    // }, [])
-    // console.log(getBooks);
-
-    //vraag is alleen, hoe en waar roep ik dit aan
-    const createBook = async () => {
-        await addDoc(books,
-            {
-                title: getTitle,
-                autheur: getAutheur,
-                omschrijving: getOmschrijving,
-                date: getDate,
-            }
-        );
-        navigate('/')
-    }
 
     const deleteBook = async (id) => {
         const postDoc = doc(db, "books", id);

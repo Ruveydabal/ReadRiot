@@ -9,14 +9,40 @@
 .backgroundFooter {
     background-color: #D7AC00;
     width: auto;
-    height: 100px;
+    height: 140px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    .contact {
+    .footerdetails {
         display: flex;
         flex-direction: column;
-        margin-top: 1rem;
-        margin-left: 1.5rem;
+        .contact {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+            margin-left: 1.5rem;
+        }
+        .buttonfooter {
+            margin-top: 0.5rem;
+            margin-left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFF4D6;
+            width: 80px;
+            height: 30px;
+            .navLink {
+                height: 30px;
+                width: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
     }
 }

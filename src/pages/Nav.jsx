@@ -17,6 +17,11 @@ const Nav = () => {
                                 Home
                             </Link>
                         </div>
+                        {/* <div className="navLink">
+                            <Link to={"/addbook"} >
+                                AddBoek
+                            </Link>
+                        </div> */}
                         <div className="navLink">
                             <Link to={"/books"} >
                                 Books
