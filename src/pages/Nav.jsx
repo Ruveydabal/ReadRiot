@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/Nav.scss";
 import Logo from "../images/LogoReadRiot.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Nav = () => {
+
+    const [query, setQuery] = useState("");
+    const navigate = useNavigate();
+
+    const handleSearch = (e) => {
+        if (e.key === "Enter") {
+            if (query.trim() !== "") {
+                navigate(`/search?q=${encodeURIComponent(query)}`);
+                setQuery("");
+            }
+        }
+    };
+
     return(
         <nav>
             <div className="backgroundNav">
@@ -17,11 +30,6 @@ const Nav = () => {
                                 Home
                             </Link>
                         </div>
-                        {/* <div className="navLink">
-                            <Link to={"/addbook"} >
-                                AddBoek
-                            </Link>
-                        </div> */}
                         <div className="navLink">
                             <Link to={"/books"} >
                                 Books
@@ -39,7 +47,14 @@ const Nav = () => {
                         </div>
                     </div>
                     <div className="searchContainer">
-                        <input className="search" type="text" placeholder="Search by name or author" />
+                        <input
+                            className="search"
+                            type="text"
+                            placeholder="Search by name or author"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            onKeyDown={handleSearch}
+                        />
                     </div>
                 </div>
             </div>  

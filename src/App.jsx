@@ -5,6 +5,7 @@ import Friends from "./pages/Friends.jsx";
 import Login from "./pages/Login.jsx";
 import AddBoek from "./pages/AddBoek.jsx";
 import ProfileDetails from "./pages/ProfileDetails.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
             <Route path={"/friends"} element={<Friends />} />
             <Route path={"/login"} element={<Login />} />
             <Route path={"/profile"} element={<ProfileDetails />} />
+            <Route path={"/search"} element={<SearchPage />} />
         </Routes>
     );
 };

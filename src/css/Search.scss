@@ -22,3 +22,36 @@
         justify-content: space-around;
     }
 }
+
+.backgroundsearchedbooks {
+    background-color: #333333;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .searchedbooks{
+        padding: 1rem;
+        color: black;
+        font-weight: bold;
+        display: inline-block;
+        margin: 1rem auto;
+        border-radius: 5px;
+    }
+    .allbookslist{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        list-style: none;
+        padding-left: 0;
+        color: #ffffff;
+        width: 100%;
+        max-width: 600px;
+        .bookCard {
+            background-color: #444;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+    }
+}
