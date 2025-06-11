@@ -4,10 +4,7 @@ import "../css/Profile.scss";
 const ProfileDetails = () => {
     return (
         <div className="background">
-            <div className="links">
-                <div className="foto">
-                    <img src="" />
-                </div>
+            {/* <div className="links">
                 <div className="btn">
 
                 </div>
@@ -19,7 +16,7 @@ const ProfileDetails = () => {
                 <div className="bio">
                     
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
