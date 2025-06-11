@@ -19,14 +19,22 @@ const AddBoek = () => {
     })
 
     const createBook = async () => {
-        await addDoc(book,
-            {
-                title: getInfo.title,
-                autheur: getInfo.author,
-                omschrijving: getInfo.description,
+        try {
+            if (!getInfo.title || !getInfo.author || !getInfo.description) {
+                alert("Vul alle velden in.");
+                return;
             }
-        );
-    }
+            await addDoc(book, {
+                title: getInfo.title,
+                author: getInfo.author,
+                description: getInfo.description,
+            });
+            navigate("/");
+        } catch (error) {
+            console.error("Fout bij toevoegen boek:", error);
+            alert("Er ging iets mis bij het toevoegen van het boek.");
+        }
+    };
 
     return (
         <>

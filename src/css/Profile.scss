@@ -13,7 +13,16 @@
     justify-content: center;
     align-items: center;
     margin: 2rem;
+    .profilename {
+        margin-top: 1rem;
+        color: #ffffff;
+        .welcometext {
+            font-size: 22px;
+        }
+    }
     .logout {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         background-color: #FFF4D6;
         display: flex;
         flex-direction: row;

@@ -37,8 +37,13 @@ const ProfileDetails = () => {
     return (
         <>
             <Nav />
-            
+
             <div className="backgroundprofile">
+                {user && (
+                    <div className="profilename">
+                        <a className="welcometext">{user.displayName || user.email}</a>
+                    </div>
+                )}
                 <button className="logout" onClick={handleLogout}>
                     Uitloggen
                 </button>
