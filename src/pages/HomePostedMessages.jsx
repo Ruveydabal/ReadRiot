@@ -7,48 +7,57 @@ const HomePostedMessages = () => {
     const [getMessages, SetGetMessages] = useState([]);
     const messages = collection(db, "Messages");
 
-    // const [getReaction, SetGetReaction] = useState([]);
-    // const reaction = collection(db, "reaction");
+     const [getReactions, SetGetReactions] = useState([]);
+     const reaction = collection(db, "Reactions");
 
     useEffect(() => {
         const getMessageDetails = async () => {
-            const data = await getDocs(message)
-            SetGetMessage(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})));
+            const data = await getDocs(messages)
+            SetGetMessages(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})));
         }
             getMessageDetails();
     }, [])
 
-    // useEffect(() => {
-    //     const getReactionDetails = async () => {
-    //         const data = await getDocs(reaction)
-    //         SetGetReaction(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})));
-    //     }
-    //         SetGetReaction();
-    // })
+    useEffect(() => {
+        const getReactionDetails = async () => {
+            const data = await getDocs(reaction)
+            SetGetReactions(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})));
+        }
+            getReactionDetails();
+    })
 
-    console.log(getMessage);
+ 
     
     return (
         <div className="homeBackgroundWhite">
             <div className="homeContainer">
-                {getMessage && getMessage.map((message, index) => (
+                {getMessages && getMessages.map((messages, index) => (
                 <section className="homeFeed">
                     <div key={index}>   
                         <div className="messageBlock">
-                            <div className="messageTextBlock">
-                                <a className="messageTextBold">{message.message}</a>
+                            <div className="messageReactionTextBlock">
+                                <a className="messageText">{messages.message}</a>
                             </div>
                             {/* message from database?? */}
                         </div>
-                        <div className="reactionBlock">
-                            {/* rections from database?? */}
-                        </div>
+                         {getReactions && getReactions.map((reaction) => (
+                            <div className="reactionBlock">
+                                <div className="messageReactionTextBlock">
+                                <a className="messageText">{reaction.reaction}</a>
+                                </div>
+                            </div>
+                          
+                            ))}
+                        
                     </div>
                 </section>
                 ))}
             </div>
+
+            
         </div>
     );
 };
+
 
 export default HomePostedMessages;
