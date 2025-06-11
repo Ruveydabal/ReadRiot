@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfaire Display", serif;
+}
+
+.logedin {
+    text-align: center;
+    padding: 2rem;
+    .profileinfo {
+        background-color: #333333;
+        padding: 2rem;
+        .infodisplay {
+            color: #ffffff;
+            font-size: 20px;
+        }
+        .logout {
+            margin: 1rem;
+        }
+    }
+}
+
+.login {
+    background-color: #333333;
+    height: auto;
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .titleloginemail {
+        font-size: 28px;
+        color: #ffffff;
+        margin-bottom: 1rem;
+    }
+    .inputfieldemail {
+        // margin-left: 5px;
+    }
+    .inputfieldpassword {
+
+    }
+    .loginemail {
+        border: none;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        background-color: #FFF4D6;
+    }
+    .registeremail {
+        border: none;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+        margin-bottom: 2rem;
+        background-color: #FFF4D6;
+    }
+    .titlelogingoogle {
+        font-size: 28px;
+        color: #ffffff;
+        margin-bottom: 1rem;
+    }
+    .logingoogle {
+        border: none;
+        background-color: #FFF4D6;
+    }
+}
