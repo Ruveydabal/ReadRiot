@@ -40,9 +40,6 @@ const Nav = () => {
                     </div>
                     <div className="searchContainer">
                         <input className="search" type="text" placeholder="Search by name or author" />
-                        {/* moeten nog iets regelen voor de search pagina, want nou kom je er niet bij */}
-                        {/* ook moeten we nog een button maken voor de search */}
-                        {/* de search is nog zeker niet compleet */}
                     </div>
                 </div>
             </div>  

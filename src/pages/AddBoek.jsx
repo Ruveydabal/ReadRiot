@@ -3,7 +3,7 @@ import "../css/Books.scss";
 import Nav from "./Nav.jsx";
 import Footer from "./Footer.jsx";
 import "../css/Footer.scss";
-import { getDocs, collection, doc, getFirestore, updateDoc, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from 'react-router-dom';
 import { db } from "../Firebase.jsx";
 

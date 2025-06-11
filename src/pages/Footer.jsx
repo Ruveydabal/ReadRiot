@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/Footer.scss";
-import AddBoek from "./AddBoek.jsx";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

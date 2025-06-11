@@ -6,7 +6,7 @@ const Login = () => {
     return (
         <div>
             <Nav />
-            {/* hoe tf moet je hier een inlog maken.... */}
+                {/* hier moeten we de inlog maken met google */}
             <Footer />
         </div>
     )   
