@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Nav from "./Nav.jsx";
 import Footer from "./Footer.jsx";
 import "../css/Login.scss";
 import { getAuth, signInWithPopup, GoogleAuthProvider,  onAuthStateChanged, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword  } from "firebase/auth";
 
-
 const Login = () => {
+
     //inloggen met google
     const [user, setUser] = useState(null);
     const auth = getAuth();
+
+    //navigate naar profile pagina na inloggen
+    const navigate = useNavigate();
 
     //inloggen met email en password
     const [email, setEmail] = useState("");
@@ -18,10 +22,12 @@ const Login = () => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            if (currentUser) {
+                navigate("/profile"); 
+            }
         });
-
         return () => unsubscribe();
-    }, [auth]);
+    }, [auth, navigate]);
 
     //google
     const handleGoogleLogin = () => {
@@ -29,28 +35,29 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
                 console.log("Ingelogd:", result.user);
+                navigate("/profile"); 
             })
             .catch((error) => {
                 console.error("Fout bij inloggen:", error.message);
             });
     };
 
-    //google
-    const handleLogout = () => {
-        signOut(auth)
-            .then(() => {
-                console.log("Uitgelogd");
-            })
-            .catch((error) => {
-                console.error("Fout bij uitloggen:", error.message);
-            });
-    };
+    // const handleLogout = () => {
+    //     signOut(auth)
+    //         .then(() => {
+    //             console.log("Uitgelogd");
+    //         })
+    //         .catch((error) => {
+    //             console.error("Fout bij uitloggen:", error.message);
+    //         });
+    // };
     
     //login met email en password
     const handleEmailLogin = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 console.log("Ingelogd:", userCredential.user);
+                navigate("/profile"); 
             })
             .catch((error) => {
                 console.error("Fout bij inloggen:", error.message);
@@ -73,6 +80,7 @@ const Login = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 console.log("Geregistreerd:", userCredential.user);
+                navigate("/profile"); // ← redirect na registratie
             })
             .catch((error) => {
                 console.error("Fout bij registreren:", error.message);
@@ -84,7 +92,7 @@ const Login = () => {
         <div>
             <Nav />
             <div className="logedin">
-                {user ? (
+                {/* {user ? (
                     <div className="profileinfo">
                         {user.photoURL && (
                             <img
@@ -98,8 +106,9 @@ const Login = () => {
                         <button className="logout" onClick={handleLogout}>
                             Uitloggen
                         </button>
-                    </div>
-                ) : (
+                    </div> */}
+                {/* ) : ( */}
+                
                     <div className="login">
                         <a className="titleloginemail">Login/Register met Email and Password</a>
                             <input
@@ -127,7 +136,7 @@ const Login = () => {
                             Inloggen met Google
                         </button>
                     </div>
-                )}
+                {/* )} */}
             </div>
             <Footer />
         </div>
