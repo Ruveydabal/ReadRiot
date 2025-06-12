@@ -24,32 +24,39 @@ const HomePostedMessages = () => {
             SetGetReactions(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})));
         }
             getReactionDetails();
-    })
+    }, [])
 
- 
+//  console.log("Messages:", getMessages);
+// console.log("Reactions:", getReactions);
+
     
     return (
         <div className="homeBackgroundWhite">
             <div className="homeContainer">
-                {getMessages && getMessages.map((messages, index) => (
+                {getMessages && getMessages.map((messages) => (
                 <section className="homeFeed">
-                    <div key={index}>   
+                    <div className="messageId" key={messages.id}>   
                         <div className="messageBlock">
                             <div className="messageReactionTextBlock">
                                 <a className="messageText">{messages.message}</a>
                             </div>
-                            {/* message from database?? */}
                         </div>
-                         {getReactions && getReactions.map((reaction) => (
-                            <div className="reactionBlock">
-                                <div className="messageReactionTextBlock">
-                                <a className="messageText">{reaction.reaction}</a>
-                                </div>
-                            </div>
-                          
-                            ))}
                         
                     </div>
+                      {getReactions.filter((reaction) => reaction.Message_id === messages.id)
+                      .map((reaction) => (
+                            <div className="reactionId" key={reaction.id}>
+                                <div className="reactionBlock"> 
+                                    <div className="messageReactionTextBlock">
+                                        <a className="messageText">{reaction.reaction}</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        ))}
+
+                        
+                    
                 </section>
                 ))}
             </div>
@@ -57,6 +64,8 @@ const HomePostedMessages = () => {
             
         </div>
     );
+
+    
 };
 
 

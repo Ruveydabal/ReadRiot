@@ -26,30 +26,52 @@
         background-color: #333333;
         
         .homeFeed{
+            background-color: #D9D9D9;
             margin-top: 10px;
             margin-bottom: 10px;
             width: 90%;
-            height: 180px;
+            height: 100px;
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: flex-start;
-            
-            .messageBlock{
+            justify-content: center;
+
+            .messageId{
                 height: 100%;
-                width: 100%;
+                width: 70%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                background-color: pink;
+            }
 
-                .messageReactionTextBlock{
-                height: 25px;
-                width: 250px;
+            .reactionId{
+                height: 100%;
+                width: 30%;
                 display: flex;
                 flex-direction: row;
-                justify-content: flex-start;
+                align-items: center;
+                justify-content: center;
+                border-left: 2px solid #333333; 
+            }
+
+
+            .messageBlock{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                //background-color: pink;
+
+                .messageReactionTextBlock{
+                    height: 25px;
+                    width: 250px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                   // background-color: red;
                 
 
                 .messageText{
@@ -66,15 +88,26 @@
                     margin-left: 4px;
                 }
             }
+
             }
 
             .reactionBlock{
                 height: 100%;
                 width: 100%;
                 display: flex;
+                flex-direction: row;
                 align-items: center;
-                justify-content: center;
-                background-color: red;
+                justify-content: flex-end;
+
+                .messageReactionTextBlock{
+                    height: 100%;
+                    width: 250px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                  //  background-color: yellow;
+                }
             }
         }
 
