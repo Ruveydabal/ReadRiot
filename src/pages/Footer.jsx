@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/Footer.scss";
-import AddBoek from "./AddBoek.jsx";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -9,6 +8,7 @@ const Footer = () => {
             <div className="backgroundFooter">
                 <div className="footerdetails">
                     <div className="contact">
+                        {/* Contact text */}
                         <a>
                             Contact
                         </a>
@@ -19,6 +19,7 @@ const Footer = () => {
                             Email for errors: 
                         </a>
                     </div>
+                    {/* Add Boek knop in de footer, kan op alle tijden toe worden gevoegd */}
                     <div className="buttonfooter">
                         <div className="navLink">
                             <Link to={"/addbook"} >

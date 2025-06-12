@@ -8,7 +8,6 @@ const BookDetailsPage = () => {
     return (
         <div>
             <Nav />
-
             <AllBooksSameAutheur />
             <Footer />
         </div>
