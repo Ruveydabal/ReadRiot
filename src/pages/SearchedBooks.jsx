@@ -41,13 +41,16 @@ const SearchedBooks = () => {
 
     return (
         <>
+            {/* Laat het resultaat zien van wat je hebt ingvuld in de search */}
             <a className="searchedbooks">Zoekresultaten voor: "{query}"</a>
             <div className="backgroundsearchedbooks">
                 {loading ? (
                     <p>Bezig met laden...</p>
                 ) : books.length > 0 ? (
+                    // kijkt of er boeken in staan anders gaat ie naar geen boeken gevonden
                     <ul className="allbookslist">
                         {books.map((book) => (
+                            // de title en autheur komt tevoorschijn 
                             <li key={book.id} className="bookCard">
                                 <p><strong>Title:</strong> {book.title}</p>
                                 <p><strong>Auteur:</strong> {book.author}</p>
@@ -55,6 +58,7 @@ const SearchedBooks = () => {
                         ))}
                     </ul>
                 ) : (
+                    // voor als er geen boeken zijn gevonden, scss moet nog veranderd worden
                     <p>Geen boeken gevonden.</p>
                 )}
             </div>

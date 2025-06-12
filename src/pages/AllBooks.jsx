@@ -7,6 +7,7 @@ const AllBooks = ({books}) => {
     const [getBooks, setGetBooks] = useState([]);
     const book = collection(db, "Books");
     
+    //alle details van het boek
     useEffect(() => {
         const getBookDetails = async () => {
             const data = await getDocs(book)
@@ -15,6 +16,7 @@ const AllBooks = ({books}) => {
         getBookDetails();
     }, []);
     
+    //delete book functie
     const deleteBook = async (id) => {
         await deleteDoc(doc(collection(db, "Books"), id));
     }
@@ -25,15 +27,18 @@ const AllBooks = ({books}) => {
                 {getBooks && getBooks.map((book, index) => (
                     <section className="booksFeed">
                         <div key={index}>     
+                            {/* Boek titel */}
                             <div className="bookTextBlock">
                                 <a className="bookTextBold">{book.title}</a>
                             </div>
-                        <div className="bookTextBlock">
-                                <a className="bookTextBold">Auteur: </a> 
-                                <a className="bookText">{book.author}</a>
-                        </div> 
+                            {/* Boek autheur */}
                             <div className="bookTextBlock">
-                                <a className="bookTextBold">Beschrijving: </a> 
+                                    <a className="bookTextBold">Author: </a> 
+                                    <a className="bookText">{book.author}</a>
+                            </div> 
+                            {/* Boek omschrijving */}
+                            <div className="bookTextBlock">
+                                <a className="bookTextBold">Description: </a> 
                                 <a className="bookText">{book.description}</a>
                             </div>
                         </div>

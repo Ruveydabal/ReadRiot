@@ -10,6 +10,7 @@ import SearchPage from "./pages/SearchPage.jsx";
 const App = () => {
     return (
         <Routes>
+            {/* alle Routes die worden gebruikt in de applicatie */}
             <Route path={"/"} element={<Home />} />
             <Route path={"/addbook"} element={<AddBoek />} />
             <Route path={"/books"} element={<Books />} />

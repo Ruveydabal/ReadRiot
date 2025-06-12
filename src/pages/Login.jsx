@@ -18,12 +18,12 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    //google
     useEffect(() => {
+        //als je bent ingelogd en als je op login klikt blijf je naar /profile gaan en kan je niet meer naar de login page
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             if (currentUser) {
-                navigate("/profile"); 
+                navigate("/profile"); // ← redirect na registratie
             }
         });
         return () => unsubscribe();
@@ -31,33 +31,25 @@ const Login = () => {
 
     //google
     const handleGoogleLogin = () => {
+        //inloggen met google
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
             .then((result) => {
                 console.log("Ingelogd:", result.user);
-                navigate("/profile"); 
+                navigate("/profile"); // ← redirect na registratie
             })
             .catch((error) => {
                 console.error("Fout bij inloggen:", error.message);
             });
     };
-
-    // const handleLogout = () => {
-    //     signOut(auth)
-    //         .then(() => {
-    //             console.log("Uitgelogd");
-    //         })
-    //         .catch((error) => {
-    //             console.error("Fout bij uitloggen:", error.message);
-    //         });
-    // };
     
     //login met email en password
     const handleEmailLogin = () => {
+        //kijken of persoon in de database staat, zo ja word je ingelogd
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 console.log("Ingelogd:", userCredential.user);
-                navigate("/profile"); 
+                navigate("/profile"); // ← redirect na registratie
             })
             .catch((error) => {
                 console.error("Fout bij inloggen:", error.message);
@@ -67,16 +59,19 @@ const Login = () => {
 
     //register met email/password
     const handleRegister = () => {
+        //kijken of alles is ingevuld
         if (!email || !password) {
             alert("Vul zowel e-mail als wachtwoord in.");
             return;
         }
 
+        //kijken of de email wel geldig is
         if (!email.includes("@")) {
             alert("Voer een geldig e-mailadres in.");
             return;
         }
 
+        //user word toegevoegd aan database bij register
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 console.log("Geregistreerd:", userCredential.user);

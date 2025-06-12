@@ -8,6 +8,7 @@ const Nav = () => {
     const [query, setQuery] = useState("");
     const navigate = useNavigate();
 
+    //Search zoekt alleen als je op enter hebt geklikt
     const handleSearch = (e) => {
         if (e.key === "Enter") {
             if (query.trim() !== "") {
@@ -20,9 +21,11 @@ const Nav = () => {
     return(
         <nav>
             <div className="backgroundNav">
+                {/* Logo van onze applicatie */}
                 <div className="logo">
                     <img className="img" src={Logo} alt="Logo"/>
                 </div>
+                {/* Nav links bovenin */}
                 <div className="navLinkContainer">
                     <div className="above">
                         <div className="navLink">
@@ -46,6 +49,7 @@ const Nav = () => {
                             </Link>
                         </div>
                     </div>
+                    {/* search query */}
                     <div className="searchContainer">
                         <input
                             className="search"

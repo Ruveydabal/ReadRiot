@@ -7,6 +7,7 @@ const SearchPage = () => {
     return (
         <div>
             <Nav />
+            {/* haalt de informatie van SearchedBooks vandaan */}
             <SearchedBooks />
             <Footer />
         </div>

@@ -11,6 +11,7 @@ const ProfileDetails = () => {
     const auth = getAuth();
     const navigate = useNavigate();
 
+    //zorgt er voor dat je altijd naar profile gaat als je bent ingelogd
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((currentUser) => {
             if (!currentUser) {
@@ -19,10 +20,10 @@ const ProfileDetails = () => {
                 setUser(currentUser);
             }
         });
-
         return () => unsubscribe();
     }, [auth, navigate]);
 
+    //zorgt ervoor dat je kan uitloggen
     const handleLogout = () => {
         signOut(auth)
             .then(() => {
@@ -39,11 +40,13 @@ const ProfileDetails = () => {
             <Nav />
 
             <div className="backgroundprofile">
+                {/* Laat de naam zien waarbij je mee bent ingelogd */}
                 {user && (
                     <div className="profilename">
                         <a className="welcometext">{user.displayName || user.email}</a>
                     </div>
                 )}
+                {/* Button met logout zodat je kan uitloggen als je bent ingelogd */}
                 <button className="logout" onClick={handleLogout}>
                     Uitloggen
                 </button>

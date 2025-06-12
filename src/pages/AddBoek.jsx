@@ -12,6 +12,7 @@ const AddBoek = () => {
 
     const book = collection(db, "Books"); 
 
+    //informatie 
     const [getInfo, setInfo] = useState({
         title: "",
         author: "",
@@ -20,6 +21,7 @@ const AddBoek = () => {
 
     const createBook = async () => {
         try {
+            //checken of alles ingevuld is 
             if (!getInfo.title || !getInfo.author || !getInfo.description) {
                 alert("Vul alle velden in.");
                 return;
@@ -29,8 +31,10 @@ const AddBoek = () => {
                 author: getInfo.author,
                 description: getInfo.description,
             });
+            //als alles ingevuld is word je terug gestuurd naar de home pagina
             navigate("/");
         } catch (error) {
+            //error handeling
             console.error("Fout bij toevoegen boek:", error);
             alert("Er ging iets mis bij het toevoegen van het boek.");
         }
@@ -44,6 +48,7 @@ const AddBoek = () => {
                 <div className="addToDatabase">
                     <div className="alignitemsdatabase">
                         <div className="addTitle">
+                            {/* input titel boek */}
                             <input 
                                 className="titlebook"
                                 type="text" 
@@ -52,7 +57,7 @@ const AddBoek = () => {
                                 onChange={(e) => setInfo({ ...getInfo, title: e.target.value })}
                             />
                         </div>
-
+                        {/* input autheur boek */}
                         <div className="addAuthor">
                             <input 
                                 className="authorbook"
@@ -62,7 +67,7 @@ const AddBoek = () => {
                                 onChange={(e) => setInfo({ ...getInfo, author: e.target.value })}
                             />
                         </div>
-
+                        {/* input description boek */}
                         <div className="addDescription">
                             <textarea 
                                 className="descriptionbook"
@@ -74,9 +79,11 @@ const AddBoek = () => {
                     </div>
                     <div className="buttondetails">
                         <div className="btns">
+                            {/* cancel button brengt je terug naar home */}
                             <button className="cancelbtn" onClick={() => navigate("/")}> 
                                 Cancel
                             </button>
+                            {/* add button brengt je terug naar home */}
                             <button className="addbtn" onClick={createBook}> 
                                 Add Book
                             </button>
