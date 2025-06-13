@@ -40,29 +40,36 @@ const SearchedBooks = () => {
     }, [query]);
 
     return (
-        <>
-            {/* Laat het resultaat zien van wat je hebt ingvuld in de search */}
-            <a className="searchedbooks">Zoekresultaten voor: "{query}"</a>
-            <div className="backgroundsearchedbooks">
+        <div className="booksBackgroundWhite">
+            <a className="searchText">Zoekresultaten voor: "{query}"</a>
+            <div className="searchContainer">
+               
                 {loading ? (
                     <p>Bezig met laden...</p>
                 ) : books.length > 0 ? (
-                    // kijkt of er boeken in staan anders gaat ie naar geen boeken gevonden
-                    <ul className="allbookslist">
-                        {books.map((book) => (
-                            // de title en autheur komt tevoorschijn 
-                            <li key={book.id} className="bookCard">
-                                <p><strong>Title:</strong> {book.title}</p>
-                                <p><strong>Auteur:</strong> {book.author}</p>
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    // voor als er geen boeken zijn gevonden, scss moet nog veranderd worden
-                    <p>Geen boeken gevonden.</p>
-                )}
-            </div>
-        </>
+                    books.map((book) => (
+                <section key={book.id} className="searchFeed">
+                    <div className="foundBook">
+                        <div className="textBookBlock">
+                            <a className="bookTextBold">Title: </a>
+                            <a className="bookText">{book.title}</a>
+                        </div>
+                        <div className="textBookBlock">
+                            <a className="bookTextBold">Author: </a>
+                            <a className="bookText">{book.author}</a>
+                        </div>
+                        <div className="textBookBlock">
+                            <a className="bookTextBold">Description: </a>
+                            <a className="bookText">{book.description || "Geen beschrijving"}</a>
+                        </div>
+                    </div>
+                </section>
+            ))
+            ) : (
+            <p>Geen boeken gevonden.</p>
+            )}
+        </div>
+    </div>
     );
 };
 
