@@ -6,6 +6,7 @@ import Login from "./pages/Login.jsx";
 import AddBoek from "./pages/AddBoek.jsx";
 import ProfileDetails from "./pages/ProfileDetails.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
+import AddMessage from "./pages/AddMessage.jsx";
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
             {/* alle Routes die worden gebruikt in de applicatie */}
             <Route path={"/"} element={<Home />} />
             <Route path={"/addbook"} element={<AddBoek />} />
+            <Route path={"/addmessage"} element={<AddMessage />} />
             <Route path={"/books"} element={<Books />} />
             <Route path={"/friends"} element={<Friends />} />
             <Route path={"/login"} element={<Login />} />
