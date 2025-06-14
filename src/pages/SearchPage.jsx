@@ -1,4 +1,3 @@
-import React from 'react';
 import Nav from "./Nav.jsx";
 import SearchedBooks from './SearchedBooks.jsx';
 import Footer from './Footer.jsx';

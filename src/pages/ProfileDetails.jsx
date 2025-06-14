@@ -1,4 +1,3 @@
-import React from 'react';
 import Nav from "./Nav.jsx";
 import Footer from "./Footer.jsx";
 import "../css/Profile.scss";

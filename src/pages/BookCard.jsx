@@ -1,4 +1,3 @@
-import React from "react";
 import "../css/Books.scss";
  
 //de kaarten/namen op de home pagina

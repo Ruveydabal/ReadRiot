@@ -1,5 +1,5 @@
 import "../css/Favorite.scss";
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getDocs, collection, doc, deleteDoc } from "firebase/firestore";
 import { db } from "../Firebase.jsx";
 

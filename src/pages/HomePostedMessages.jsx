@@ -1,16 +1,19 @@
 import "../css/Home.scss";
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getDocs, collection, doc, deleteDoc } from "firebase/firestore";
 import { db } from "../Firebase.jsx";
 import { Link } from "react-router-dom";
 
 const HomePostedMessages = () => {
+    //message
     const [getMessages, SetGetMessages] = useState([]);
     const messages = collection(db, "Messages");
 
+    //reaction
     const [getReactions, SetGetReactions] = useState([]);
     const reaction = collection(db, "Reactions");
 
+    //all the messages 
     useEffect(() => {
         const getMessageDetails = async () => {
             const data = await getDocs(messages)
@@ -19,6 +22,7 @@ const HomePostedMessages = () => {
             getMessageDetails();
     }, [])
 
+    //all the reactions
     useEffect(() => {
         const getReactionDetails = async () => {
             const data = await getDocs(reaction)
@@ -27,7 +31,8 @@ const HomePostedMessages = () => {
             getReactionDetails();
     }, [])
 
-    const deleteBook = async (id) => {
+    //deleting message
+    const deletemsg = async (id) => {
         await deleteDoc(doc(collection(db, "Messages"), id));
     }
 
@@ -46,8 +51,8 @@ const HomePostedMessages = () => {
                         <button 
                             className="deletebtn"
                             onClick={async () => {
-                                await deleteBook(message.id);
-                                // Verwijder lokaal uit state na deleten
+                                await deletemsg(message.id);
+                                // Deletes it and reloads the page
                                 SetGetMessages(getMessages.filter((m) => m.id !== message.id));
                             }}
                         >
@@ -62,7 +67,6 @@ const HomePostedMessages = () => {
                                         <a className="messageText">{reaction.reaction}</a>
                                     </div>
                                 </div>
-
                             </div>
                         ))}
                 </section>

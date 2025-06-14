@@ -1,4 +1,3 @@
-import React from "react";
 import "../css/Footer.scss";
 import { Link } from "react-router-dom";
 
@@ -23,7 +22,7 @@ const Footer = () => {
                     <div className="buttonfooter">
                         <div className="navLink">
                             <Link to={"/addbook"} >
-                                AddBoek
+                                Add Book
                             </Link>
                         </div>
                     </div>

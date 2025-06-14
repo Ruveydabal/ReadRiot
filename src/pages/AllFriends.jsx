@@ -1,5 +1,5 @@
 import "../css/Friends.scss";
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getDocs, collection, doc } from "firebase/firestore";
 import { db } from "../Firebase.jsx";
 
