@@ -6,52 +6,82 @@
     font-family: "Playfaire Display", serif;
 }
 
-.background {
+.booksBackgroundWhite {
+    height: 100%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    .backgroundsearch {
-        background-color: #333333;
-        height: 400px;
-        width: 300px;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+ 
+    .searchText{
+        color: black;
+        font-weight: lighter;
+        font-size: medium;
+        margin-left: 4px;
+    }
+
+    .searchContainer {
+        height: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
+        background-color: #333333;
+
+        .searchFeed{
+            background-color: #D9D9D9;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 90%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+                .foundBook{
+                    height: 100%;
+                    width: 100%;
+                   // background-color: green;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .textBookBlock{
+                        height: 25px;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                       // background-color: aqua;
+
+                        .bookText{
+                        color: black;
+                        font-weight: lighter;
+                        font-size: medium;
+                        margin-left: 4px;
+                        //background-color: aquamarine;
+                        }
+
+                        .bookTextBold{
+                            color: black;
+                            font-weight: bold;
+                            font-size: medium;
+                            //margin-left: 5px;
+                        }
+                    }
+                }
+            }
+
+           
+
+           
+        
     }
 }
 
-.backgroundsearchedbooks {
-    background-color: #333333;
-    margin: 2rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    .searchedbooks{
-        padding: 1rem;
-        color: black;
-        font-weight: bold;
-        display: inline-block;
-        margin: 1rem auto;
-        border-radius: 5px;
-    }
-    .allbookslist{
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        list-style: none;
-        padding-left: 0;
-        color: #ffffff;
-        width: 100%;
-        max-width: 600px;
-        .bookCard {
-            background-color: #444;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-    }
-}
