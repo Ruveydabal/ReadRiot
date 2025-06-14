@@ -18,7 +18,7 @@ const Footer = () => {
                             Email for errors: 
                         </a>
                     </div>
-                    {/* Add Boek knop in de footer, kan op alle tijden toe worden gevoegd */}
+                    {/* Add Book button in footer, can be added at all times */}
                     <div className="buttonfooter">
                         <div className="navLink">
                             <Link to={"/addbook"} >

@@ -3,7 +3,6 @@ import AllBooks from "./AllBooks.jsx";
 import Footer from "./Footer.jsx";
 
 const Books = () => {
-
     return (
         <div>
             <Nav />

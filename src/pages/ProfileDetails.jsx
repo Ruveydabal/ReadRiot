@@ -47,7 +47,7 @@ const ProfileDetails = () => {
                 )}
                 {/* Button met logout zodat je kan uitloggen als je bent ingelogd */}
                 <button className="logout" onClick={handleLogout}>
-                    Uitloggen
+                    Log out
                 </button>
             </div>
                 

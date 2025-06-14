@@ -25,8 +25,8 @@ const AddMessage = () => {
             navigate("/");
         } catch (error) {
             //error handeling
-            console.error("Fout bij toevoegen message:", error);
-            alert("Er ging iets mis bij het toevoegen van een message.");
+            console.error("Error by adding message:", error);
+            alert("Something went wrong while adding a message.");
         }
     };
 

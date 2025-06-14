@@ -27,16 +27,16 @@ const AllBooks = ({books}) => {
                 {getBooks && getBooks.map((book, index) => (
                     <section className="booksFeed">
                         <div key={index}>     
-                            {/* Boek titel */}
+                            {/* Book titel */}
                             <div className="bookTextBlock">
                                 <a className="bookTextBold">{book.title}</a>
                             </div>
-                            {/* Boek autheur */}
+                            {/* Book author */}
                             <div className="bookTextBlock">
                                     <a className="bookTextBold">Author: </a> 
                                     <a className="bookText">{book.author}</a>
                             </div> 
-                            {/* Boek omschrijving */}
+                            {/* Book description */}
                             <div className="bookTextBlock">
                                 <a className="bookTextBold">Description: </a> 
                                 <a className="bookText">{book.description}</a>

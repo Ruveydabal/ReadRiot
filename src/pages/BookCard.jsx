@@ -1,6 +1,6 @@
 import "../css/Books.scss";
  
-//de kaarten/namen op de home pagina
+//the names/cards on the home page
 const BookCard = ({ data }) => {
     return (    
         <div className="bookCard">

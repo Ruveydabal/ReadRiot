@@ -14,7 +14,7 @@ const SearchedBooks = () => {
         const fetchBooks = async () => {
             setLoading(true);
             try {
-                const snapshot = await getDocs(collection(db, "Books")); // collectie heet 'books'
+                const snapshot = await getDocs(collection(db, "Books")); 
                 const allBooks = snapshot.docs.map(doc => ({
                     id: doc.id,
                     ...doc.data()
@@ -41,7 +41,7 @@ const SearchedBooks = () => {
 
     return (
         <div className="booksBackgroundWhite">
-            <a className="searchText">Zoekresultaten voor: "{query}"</a>
+            <a className="searchText">Searchresults for: "{query}"</a>
             <div className="searchContainer">
                
                 {loading ? (
@@ -66,7 +66,7 @@ const SearchedBooks = () => {
                 </section>
             ))
             ) : (
-            <p>Geen boeken gevonden.</p>
+            <p className="nobooks">No books found</p>
             )}
         </div>
     </div>

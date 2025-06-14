@@ -21,9 +21,9 @@ const AddBoek = () => {
 
     const createBook = async () => {
         try {
-            //checken of alles ingevuld is 
+            //checks if everything is filled in
             if (!getInfo.title || !getInfo.author || !getInfo.description) {
-                alert("Vul alle velden in.");
+                alert("Enter all fields.");
                 return;
             }
             await addDoc(book, {
@@ -31,12 +31,12 @@ const AddBoek = () => {
                 author: getInfo.author,
                 description: getInfo.description,
             });
-            //als alles ingevuld is word je terug gestuurd naar de home pagina
+            //goes back to the home page after confirm
             navigate("/");
         } catch (error) {
             //error handeling
-            console.error("Fout bij toevoegen boek:", error);
-            alert("Er ging iets mis bij het toevoegen van het boek.");
+            console.error("Error by adding book:", error);
+            alert("Something went wrong while adding the book.");
         }
     };
 
@@ -48,7 +48,7 @@ const AddBoek = () => {
                 <div className="addToDatabase">
                     <div className="alignitemsdatabase">
                         <div className="addTitle">
-                            {/* input titel boek */}
+                            {/* input titel book */}
                             <input 
                                 className="titlebook"
                                 type="text" 
@@ -57,17 +57,17 @@ const AddBoek = () => {
                                 onChange={(e) => setInfo({ ...getInfo, title: e.target.value })}
                             />
                         </div>
-                        {/* input autheur boek */}
+                        {/* input author book */}
                         <div className="addAuthor">
                             <input 
                                 className="authorbook"
                                 type="text" 
-                                placeholder="Autor"
+                                placeholder="Author"
                                 value={getInfo.author}
                                 onChange={(e) => setInfo({ ...getInfo, author: e.target.value })}
                             />
                         </div>
-                        {/* input description boek */}
+                        {/* input description book */}
                         <div className="addDescription">
                             <textarea 
                                 className="descriptionbook"
