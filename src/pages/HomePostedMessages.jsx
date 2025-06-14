@@ -73,7 +73,7 @@ const HomePostedMessages = () => {
                 ))}
                 <div className="buttonmessage">
                     <div className="navLink">
-                        <Link to={"/addmessage"} >
+                        <Link to={"/addMessage"} >
                             Add Message
                         </Link>
                     </div>

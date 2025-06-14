@@ -34,20 +34,21 @@ const AddMessage = () => {
         <>
             <Nav />
 
-            <div className="background">
+            <div className="booksBackgroundWhite">
                 <div className="addToDatabase">
                     <div className="alignitemsdatabase">
-                        <div className="addTitle">
+                        <div className="addMessageFeed">
                             {/* input message */}
-                            <input
+                            <input 
                                 className="message"
                                 type="text" 
                                 placeholder="Add Message..."
                                 value={getMessage.message}
                                 onChange={(e) => setMessage({ message: e.target.value })}
                             />
-                        </div>
+                       </div>
                     </div>
+                    
                     <div className="buttondetails">
                         <div className="btns">
                             {/* cancel button brengt je terug naar home */}

@@ -6,19 +6,17 @@
     font-family: "Playfaire Display", serif;
 }
 
-.background {
+.booksBackgroundWhite {
     height: 100%;
     width: 100%;
     .addToDatabase {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        background-color: #333333;
+        height: 100%;
         width: 90%;
-        height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        background-color: #333333;
         .alignitemsdatabase{
             margin-top: 1rem;
             margin-bottom: 1rem;
@@ -26,14 +24,19 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            .addTitle {
-                padding: 5px;
-                .titlebook {
-                    padding-left: 15px;
-                    outline: none;
-                    box-shadow: none;
-                }
+
+            .addMessageFeed{
+                background-color: #D9D9D9;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 90%;
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
+            
             .addAuthor {
                 padding: 5px;
                 .authorbook {
