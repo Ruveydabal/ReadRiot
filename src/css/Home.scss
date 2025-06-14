@@ -36,6 +36,27 @@
             align-items: center;
             justify-content: center;
 
+            .messageButtons {
+                display: flex;
+                gap: 0.5rem;
+                margin-top: 0.3rem;
+
+                .likebtn {
+                    background-color: #FFDADA;
+                    border: none;
+                    padding: 0.2rem 0.5rem;
+                    cursor: pointer;
+                }
+
+                .deletebtn {
+                    background-color: #FFF4D6;
+                    border: none;
+                    padding: 0.2rem 0.5rem;
+                    cursor: pointer;
+                }
+            }
+
+
             .deletebtn {
                 background-color: #FFF4D6;
                 margin-bottom: 0.2rem;

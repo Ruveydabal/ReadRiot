@@ -48,16 +48,33 @@ const HomePostedMessages = () => {
                             </div>
                         </div>
                         {/* Delete */}
-                        <button 
-                            className="deletebtn"
-                            onClick={async () => {
-                                await deletemsg(message.id);
-                                // Deletes it and reloads the page
-                                SetGetMessages(getMessages.filter((m) => m.id !== message.id));
-                            }}
-                        >
-                            Delete Message
-                        </button>
+                        <div className="messageButtons">
+                            <button 
+                                className="deletebtn"
+                                onClick={async () => {
+                                    await deletemsg(message.id);
+                                    SetGetMessages(getMessages.filter((m) => m.id !== message.id));
+                                }}
+                            >
+                                Delete Message
+                            </button>
+
+                            <button 
+                                className="likebtn"
+                                onClick={() => {
+                                    SetGetMessages(prev =>
+                                        prev.map(m =>
+                                            m.id === message.id
+                                                ? { ...m, likes: (m.likes || 0) + 1 }
+                                                : m
+                                        )
+                                    );
+                                }}
+                            >
+                                Like {message.likes || 0}
+                            </button>
+                        </div>
+
                     </div>
                       {getReactions.filter((reaction) => reaction.Message_id === message.id)
                       .map((reaction) => (
