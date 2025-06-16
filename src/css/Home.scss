@@ -32,7 +32,7 @@
             width: 90%;
             height: 100px;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
 
@@ -42,7 +42,12 @@
                 border: none;
                 padding: 0.2rem;
             }
-
+            .messagereaction {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 90%;
+            }
             .messageId {
                 height: 100%;
                 width: 70%;
@@ -56,7 +61,7 @@
                 height: 100%;
                 width: 30%;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 border-left: 2px solid #333333; 
@@ -77,41 +82,53 @@
                     flex-direction: row;
                     justify-content: center;
 
-                .messageText {
-                    color: black;
-                    font-weight: lighter;
-                    font-size: medium;
-                    margin-left: 4px;
-                }
+                    .messageText {
+                        color: black;
+                        font-weight: lighter;
+                        font-size: medium;
+                        margin-left: 4px;
+                        display: flex;
+                    }
 
-                .messageTextBold {
-                    color: black;
-                    font-weight: bolder;
-                    font-size: medium;
-                    margin-left: 4px;
+                    .messageTextBold {
+                        color: black;
+                        font-weight: bolder;
+                        font-size: medium;
+                        margin-left: 4px;
+                    }
                 }
             }
-        }
 
-        .reactionBlock {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-end;
+            .reactioncolumn {
+                display: flex;
+                flex-direction: column;
+            }
 
-            .messageReactionTextBlock {
+            .reactionBlock {
                 height: 100%;
-                width: 250px;
+                width: 100%;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: center;
-                }
+                justify-content: flex-end;
+
+                .messageReactionTextBlock {
+                    height: 100%;
+                    width: 250px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    }
             }
         }
     }
+}
+
+.sendreaction{
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
 }
 
 .buttonmessage {
