@@ -9,7 +9,8 @@ import { db } from "../Firebase.jsx";
 const AddMessage = () => {
     const messages = collection(db, "Messages");
     const navigate = useNavigate();
-    
+
+
     //informatie 
     const [getMessage, setMessage] = useState({
         message: "",
