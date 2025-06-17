@@ -5,18 +5,13 @@ import { db } from "../Firebase.jsx";
 import { Link } from "react-router-dom";
 
 const HomePostedMessages = () => {
-    // Messages state
     const [getMessages, setGetMessages] = useState([]);
-    const messagesCollection = collection(db, "Messages");
-
-    // Reactions state
     const [getReactions, setGetReactions] = useState([]);
-    const reactionsCollection = collection(db, "Reactions");
-
-    // Input state per message
     const [reactionsInput, setReactionsInput] = useState({});
 
-    // Fetch all messages
+    const messagesCollection = collection(db, "Messages");
+    const reactionsCollection = collection(db, "Reactions");
+
     useEffect(() => {
         const fetchMessages = async () => {
             const data = await getDocs(messagesCollection);
@@ -25,7 +20,6 @@ const HomePostedMessages = () => {
         fetchMessages();
     }, []);
 
-    // Fetch all reactions
     useEffect(() => {
         const fetchReactions = async () => {
             const data = await getDocs(reactionsCollection);
@@ -34,14 +28,12 @@ const HomePostedMessages = () => {
         fetchReactions();
     }, []);
 
-    // Delete a message
     const deleteMsg = async (id) => {
         await deleteDoc(doc(db, "Messages", id));
         setGetMessages(getMessages.filter((m) => m.id !== id));
-        // Optionally delete reactions related to this message
+        // Optional: filter out reactions here if desired
     };
 
-    // Create a reaction
     const createReaction = async (messageId) => {
         const text = reactionsInput[messageId]?.trim();
         if (!text) return;
@@ -51,87 +43,65 @@ const HomePostedMessages = () => {
             message_id: messageId
         });
 
-        // Add to local state without full reload
         setGetReactions([
             ...getReactions,
             { id: newDoc.id, reaction: text, message_id: messageId }
         ]);
 
-        // Clear input
         setReactionsInput({ ...reactionsInput, [messageId]: "" });
     };
 
     return (
         <div className="homeBackgroundWhite">
             <div className="homeContainer">
-                {getMessages && getMessages.map((message) => (
-                <section className="homeFeed">
-                    <div className="messageId" key={message.id}>   
-                        <div className="messageBlock">
-                            <div className="messageReactionTextBlock">
-                                <a className="messageText">{message.message}</a>
-                            </div>
-                        </div>
-                        {/* Delete */}
-                        <div className="messageButtons">
-                            <button 
-                                className="deletebtn"
-                                onClick={async () => {
-                                    await deletemsg(message.id);
-                                    SetGetMessages(getMessages.filter((m) => m.id !== message.id));
-                                }}
-                            >
-                                Delete Message
-                            </button>
-
-                            <button 
-                                className="likebtn"
-                                onClick={() => {
-                                    SetGetMessages(prev =>
-                                        prev.map(m =>
-                                            m.id === message.id
-                                                ? { ...m, likes: (m.likes || 0) + 1 }
-                                                : m
-                                        )
-                                    );
-                                }}
-                            >
-                                Like {message.likes || 0}
-                            </button>
-                        </div>
-
-                    </div>
-                      {getReactions.filter((reaction) => reaction.Message_id === message.id)
-                      .map((reaction) => (
-                            <div className="reactionId" key={reaction.id}>
-                                <div className="reactionBlock"> 
-                                    <div className="messageReactionTextBlock">
-                                        <div className="messageText">{message.message}</div>
-                                    </div>
+                {getMessages.map((message) => (
+                    <section className="homeFeed" key={message.id}>
+                        <div className="messageId">
+                            <div className="messageBlock">
+                                <div className="messageReactionTextBlock">
+                                    <div className="messageText">{message.message}</div>
                                 </div>
-                                <button 
+                            </div>
+
+                            <div className="messageButtons">
+                                <button
                                     className="deletebtn"
                                     onClick={() => deleteMsg(message.id)}
                                 >
                                     Delete Message
                                 </button>
-                            </div>
 
-                            {/* Reactions for this message */}
-                            {getReactions
-                                .filter((reaction) => reaction.message_id === message.id)
-                                .map((reaction) => (
-                                    <div className="reactioncolumn">
-                                        <div className="reactionId" key={reaction.id}>
-                                            <div className="reactionBlock"> 
-                                                <div className="messageReactionTextBlock">
-                                                    <div className="messageText">{reaction.reaction}</div>
-                                                </div>
+                                <button
+                                    className="likebtn"
+                                    onClick={() => {
+                                        setGetMessages(prev =>
+                                            prev.map(m =>
+                                                m.id === message.id
+                                                    ? { ...m, likes: (m.likes || 0) + 1 }
+                                                    : m
+                                            )
+                                        );
+                                    }}
+                                >
+                                    Like {message.likes || 0}
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Reactions */}
+                        {getReactions
+                            .filter((reaction) => reaction.message_id === message.id)
+                            .map((reaction) => (
+                                <div className="reactioncolumn" key={reaction.id}>
+                                    <div className="reactionId">
+                                        <div className="reactionBlock">
+                                            <div className="messageReactionTextBlock">
+                                                <div className="messageText">{reaction.reaction}</div>
                                             </div>
                                         </div>
                                     </div>
-                                ))}
-                        </div>
+                                </div>
+                            ))}
 
                         {/* Add reaction */}
                         <div className="sendreaction">
@@ -156,7 +126,7 @@ const HomePostedMessages = () => {
 
                 <div className="buttonmessage">
                     <div className="navLink">
-                        <Link to={"/addMessage"} >
+                        <Link to={"/addMessage"}>
                             Add Message
                         </Link>
                     </div>
